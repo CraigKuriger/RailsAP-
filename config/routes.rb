@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
 
-resources :cows do
-  resources :calves do
-    resources :comments
-  end
+resources :cows, only: [:index, :show]
+resources :calves, only: [:index, :show] do
+  resources :comments, only: :create
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
