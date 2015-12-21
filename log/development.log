@@ -3202,3 +3202,16 @@ Started GET "/api/v1/cows" for ::1 at 2015-12-21 15:14:22 +1300
 Processing by Api::V1::CowsController#index as HTML
   [1m[35mCow Load (0.8ms)[0m  SELECT "cows".* FROM "cows"
 Completed 200 OK in 20ms (Views: 1.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2015-12-21 16:15:02 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 36ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-21 16:15:07 +1300
+Processing by Api::V1::CowsController#index as HTML
+  [1m[35mCow Load (0.9ms)[0m  SELECT "cows".* FROM "cows"
+Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 4.2ms)
