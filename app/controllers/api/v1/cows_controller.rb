@@ -33,15 +33,12 @@ skip_before_action :verify_authenticity_token
   def create
     @cow = Cow.new(cow_params)
 
-    respond_to do |format|
-      if @cow.save
-        format.html { redirect_to @cow, notice: 'Cow was successfully created.' }
-        format.json { render :show, status: :created, location: @cow }
-      else
-        format.html { render :new }
-        format.json { render json: @cow.errors, status: :unprocessable_entity }
-      end
+    if @cow.save
+      render json: comment.as_json
+    else
+      render status: 400
     end
+
   end
 
   def update

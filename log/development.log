@@ -3215,3 +3215,4 @@ Started GET "/api/v1/cows" for ::1 at 2015-12-21 16:15:07 +1300
 Processing by Api::V1::CowsController#index as HTML
   [1m[35mCow Load (0.9ms)[0m  SELECT "cows".* FROM "cows"
 Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 4.2ms)
+  [1m[36mCow Load (2.8ms)[0m  [1mSELECT  "cows".* FROM "cows"  ORDER BY "cows"."id" DESC LIMIT 1[0m
