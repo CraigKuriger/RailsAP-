@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-resources :cows, only: do
-  resources :calves, only: do
-    resources :comments, only: :create
+resources :cows do
+  resources :calves do
+    resources :comments
   end
 end
 
