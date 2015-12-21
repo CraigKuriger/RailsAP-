@@ -3216,3 +3216,88 @@ Processing by Api::V1::CowsController#index as HTML
   [1m[35mCow Load (0.9ms)[0m  SELECT "cows".* FROM "cows"
 Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 4.2ms)
   [1m[36mCow Load (2.8ms)[0m  [1mSELECT  "cows".* FROM "cows"  ORDER BY "cows"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for ::1 at 2015-12-22 10:25:44 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-22 10:25:55 +1300
+Processing by Api::V1::CowsController#index as HTML
+  [1m[35mCow Load (3.7ms)[0m  SELECT "cows".* FROM "cows"
+Completed 200 OK in 50ms (Views: 0.9ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-22 10:26:48 +1300
+Processing by Api::V1::CowsController#index as HTML
+  [1m[36mCow Load (0.2ms)[0m  [1mSELECT "cows".* FROM "cows"[0m
+Completed 200 OK in 14ms (Views: 1.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-22 10:27:08 +1300
+Processing by Api::V1::CowsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `calves' for #<Api::V1::CowsController:0x007fca49809dd0>):
+  app/controllers/api/v1/cows_controller.rb:6:in `index'
+
+
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.3ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/craig.kuriger/.rvm/rubies/ruby-2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (59.2ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-22 10:27:20 +1300
+Processing by Api::V1::CowsController#index as HTML
+  [1m[35mCow Load (0.4ms)[0m  SELECT "cows".* FROM "cows"
+  [1m[36mCalf Load (3.1ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 1]]
+  [1m[35mCalf Load (0.3ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 2]]
+  [1m[36mCalf Load (0.3ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 3]]
+  [1m[35mCalf Load (0.2ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 4]]
+  [1m[36mCalf Load (0.2ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 5]]
+  [1m[35mCalf Load (0.6ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 6]]
+  [1m[36mCalf Load (0.2ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 7]]
+  [1m[35mCalf Load (0.1ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 8]]
+  [1m[36mCalf Load (0.1ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 9]]
+  [1m[35mCalf Load (0.1ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 10]]
+  [1m[36mCalf Load (0.1ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 11]]
+  [1m[35mCalf Load (0.1ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 12]]
+Completed 200 OK in 149ms (Views: 31.0ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/cows" for ::1 at 2015-12-22 10:28:02 +1300
+Processing by Api::V1::CowsController#index as HTML
+  [1m[36mCow Load (0.2ms)[0m  [1mSELECT "cows".* FROM "cows"[0m
+  [1m[35mCalf Load (0.3ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 1]]
+  [1m[36mCalf Load (0.2ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 2]]
+  [1m[35mCalf Load (0.2ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 3]]
+  [1m[36mCalf Load (0.3ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 4]]
+  [1m[35mCalf Load (0.2ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 5]]
+  [1m[36mCalf Load (0.6ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 6]]
+  [1m[35mCalf Load (0.2ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 7]]
+  [1m[36mCalf Load (0.5ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 8]]
+  [1m[35mCalf Load (0.1ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 9]]
+  [1m[36mCalf Load (0.1ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 10]]
+  [1m[35mCalf Load (0.1ms)[0m  SELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1  [["cow_id", 11]]
+  [1m[36mCalf Load (0.1ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 12]]
+Completed 200 OK in 104ms (Views: 28.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/v1/cows/1" for ::1 at 2015-12-22 10:28:07 +1300
+Processing by Api::V1::CowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCow Load (0.3ms)[0m  SELECT  "cows".* FROM "cows" WHERE "cows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCalf Load (0.2ms)[0m  [1mSELECT "calves".* FROM "calves" WHERE "calves"."cow_id" = $1[0m  [["cow_id", 1]]
+Completed 200 OK in 25ms (Views: 2.2ms | ActiveRecord: 0.5ms)

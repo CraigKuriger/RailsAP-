@@ -3,17 +3,12 @@ class Api::V1::CowsController < ApplicationController
 skip_before_action :verify_authenticity_token
 
   def index
-  	render json: Cow.all.as_json(except: [:created_at, :updated_at])
+  	render json: Cow.all.as_json(include: :calves)
   end
 
   def show
     if cow = Cow.find_by_id(params[:id])
-      render json: cow.as_json(
-        except: [:created_at, :updated_at], 
-        include: { 
-         calves: { except: [:created_at, :updated_at, :category_id] } 
-        }
-      )
+      render json: cow.as_json(include: :calves)
     else 
       render status: 404, json: { 
         error: 'requested cow does not exist' 
