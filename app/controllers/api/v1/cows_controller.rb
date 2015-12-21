@@ -1,4 +1,7 @@
 class Api::V1::CowsController < ApplicationController
+
+skip_before_action :verify_authenticity_token
+
   def index
   	render json: Cow.all.as_json(except: [:created_at, :updated_at])
   end
