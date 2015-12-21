@@ -34,7 +34,7 @@ skip_before_action :verify_authenticity_token
     @cow = Cow.new(cow_params)
 
     if @cow.save
-      render json: comment.as_json
+      render json: @cow.as_json
     else
       render status: 400
     end
