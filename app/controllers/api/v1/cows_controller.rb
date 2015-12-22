@@ -38,11 +38,10 @@ skip_before_action :verify_authenticity_token
 
   def update
     @cow = Cow.find_by_id(params[:id])
-      if @cow.update(cow_params)
+    if @cow.update(cow_params)
       render json: @cow.as_json
     else
       render status: 400
-    end
     end
   end
 
